@@ -1,0 +1,59 @@
+%!TEX TS-program = pdflatex
+%!TEX TS-options = -shell-escape
+% % % % %   Die folgenden Zeilen müssen ihre Zeilennummern 4 und 5 behalten !!!    % % % % %
+\newcommand{\printpraesenzlsg}{false}
+\newcommand{\printloesungen}{false}
+\newcommand{\printbewertungen}{false}
+% % % % %   \newcommand{\printloesungen}{false}                                    % % % % %
+\newcommand{\blattnummer}{1}
+%\newcommand{\abgabetermin}{\textcolor{red}{bis 11.04.2022, 09:00 Uhr}}
+\input{include/config.tex}
+
+% Änderungen 2020: Hinweise auf Digitallehre angepasst; Rechnergeschichte entfernt; Blatt 1 und 2 zusammengefasst.
+\begin{document}
+\iforiginal{\input{include/kopf.tex}}
+
+% \begin{notes} \small
+% 	\textbf{Abgabetermine für Blatt 1:}
+	
+% 	Aufgaben 1.2/1.3: Montag, 11. April, 09:00 Uhr \\
+% 	Aufgabe 1.4: Mittwoch, 20. April, 18:00 Uhr
+% \end{notes}
+
+\aufgabetitel{$5$}{Reguläre Ausdrücke} \\
+Mit dem Kommando \texttt{grep} kann man in einem String (der üblicherweise mit einer pipe übergeben wird) in dem Text nach
+regulären Ausdrücken suchen. Recherchieren Sie, wie reguläre Ausdrücke mit grep verwendet werden.
+
+\begin{notes}
+  In Moodle ist ein Video \glqq Video reguläre Ausdrücke mit grep\grqq im Abschnitt \glqq Linux Knowledge Section\grqq, das auch helfen kann.
+\end{notes}
+
+\aufgabetitel{$4$}{Netzlaufwerkbindung persistent machen} \\
+Mit dem Kommando \texttt{mount} haben wir kennengelernt, wie man ein Laufwerk in den Verzeichnisbaum einbinden kann. In der Datei \texttt{/etc/fstab} lässt sich das
+so einstellen, dass das Netzlaufwerk permanent gemountet bleibt (auch nach dem reboot).
+\begin{enumerate}[(a)]
+  \item Recherchieren Sie wie man die Konfiguration in \texttt{/etc/fstab} vornimmt.
+  \item Erstellen Sie eine Datei, die Ihre credentials (user, password) aufnimmt und nur von Ihnen (dem owner) gelesen werden kann und
+  \item binden Sie diese in der Datei \texttt{/etc/fstab} ein.
+  \item Testen Sie ob das Netzlaufwerk nach dem reboot korrekt eingebunden wurde.
+\end{enumerate}
+
+\aufgabetitel{$5$}{Grundlagen von C} \\
+In dieser Aufgabe vertiefen wir etwas die wichtigste Hochsprache im Kontext von Betriebssystemen: C.
+\begin{enumerate}[(a)]
+  \item Recherchieren Sie die grundlegende Syntax von C-Programmen (wir haben schon viele Teile in C in der Vorlesung kennengelernt).
+  \item Schreiben Sie ein Programm, das 
+  \begin{enumerate}[(i)]
+    \item einen String (mit $>1$ Character) in eine Variable, die als Zeiger auf einen Character deklariert wird einliest und 
+    \item durch die Character des Strings geht (diese ausgibt) durch Zugriff im Array-Stil (also in etwa \texttt{s[i]})
+    \item durch die Character des Strings geht, diese ausgibt, aber nicht durch Zugriff im Array-Stil sondern durch Pointerarithmetik (Addieren des Offset auf die Adresse des ersten Characters)
+    \item die Adressen der Character des Strings ausgibt
+    \item einen \texttt{int[] numbers} definiert und mit einigen Zahlen belegt und mittels Pointerarithmetik durch die Zahlen iteriert.
+  \end{enumerate}
+\end{enumerate}
+  \begin{notes}
+    Hinweis: Obwohl Characters Bytes sind und Integer Wörter, muss der jeweilige Pointer in beiden Fällen nur um $1$ weitergeschaltet werden, da sich der C-Compiler um die Berechnung des Offsets ($*4$ bei Wöertern) selbst kümmert.
+  \end{notes}
+\end{document}
+
+
