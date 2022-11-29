@@ -1,7 +1,5 @@
 #include <stdio.h>
 
-
-
 int main()
 {
     int hal = 42;
