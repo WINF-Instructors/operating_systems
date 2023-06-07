@@ -44,6 +44,18 @@ int main(void) {
     printf("%i\n", *(numbers+2));
     printf("%i\n", *(numbers+3));
     printf("%i\n", *(numbers+4));
+    
+    printf("%p\n", &numbers[0]);
+    printf("%p\n", &numbers[1]);
+    printf("%p\n", &numbers[2]);
+    printf("%p\n", &numbers[3]);
+    printf("%p\n", &numbers[4]);
+    printf("_____________\n");
+    printf("%p\n", numbers);
+    printf("%p\n", numbers+1);
+    printf("%p\n", numbers+2);
+    printf("%p\n", numbers+3);
+    printf("%p\n", numbers+4);
     //typedef struct{
         
     //}   
